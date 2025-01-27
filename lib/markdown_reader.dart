@@ -19,15 +19,17 @@ class _MarkdownReaderState extends State<MarkdownReader> {
     _loadMarkdownFile();
   }
 
+  // Tenta obter o arquivo markdown
   Future<void> _loadMarkdownFile() async {
     try {
+      // Utiliza um arquivo disponível em assets para exibição
       final content = await rootBundle.loadString('CHANGELOG.md');
       setState(() {
         _markdownContent = content;
       });
     } catch (e) {
       setState(() {
-        _markdownContent = 'Erro ao carregar conteúdo: $e';
+        _markdownContent = 'Não foi possível carregar o conteúdo: $e';
       });
     }
   }
@@ -35,7 +37,7 @@ class _MarkdownReaderState extends State<MarkdownReader> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Novidades do app!')),
+      appBar: AppBar(title: const Text('CHANGELOG')),
       body: Padding(
         padding: const EdgeInsets.all(8),
         child: _markdownContent.isEmpty
