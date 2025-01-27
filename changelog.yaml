@@ -1,9 +1,0 @@
-header: "# Changelog"
-categories:
-  - type: feat
-    title: "Novos Recursos"
-  - type: fix
-    title: "Correções de Bugs"
-  - type: chore
-    title: "Tarefas Gerais"
-group-by: type
