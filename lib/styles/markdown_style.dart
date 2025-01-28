@@ -13,23 +13,19 @@ class MarkdownStyle {
         fontWeight: FontWeight.w600,
       ),
       p: const TextStyle(
-        fontSize: 16,
-        color: Colors.black87,
-        height: 1.5,
+        fontSize: 14,
       ),
       strong: const TextStyle(
         fontSize: 16,
         fontWeight: FontWeight.bold,
-        color: Colors.red,
       ),
       code: TextStyle(
         fontSize: 14,
-        fontFamily: 'Courier',
         backgroundColor: Colors.grey[200],
         color: Colors.deepPurple,
       ),
       blockquote: TextStyle(
-        fontSize: 18,
+        fontSize: 14,
         fontStyle: FontStyle.italic,
         color: Colors.grey[600],
       ),
