@@ -3,14 +3,14 @@ import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:poc_automatic_changelog/styles/markdown_style.dart';
 
-class MarkdownReader extends StatefulWidget {
-  const MarkdownReader({super.key});
+class ChangelogPage extends StatefulWidget {
+  const ChangelogPage({super.key});
 
   @override
-  State<MarkdownReader> createState() => _MarkdownReaderState();
+  State<ChangelogPage> createState() => _ChangelogPageState();
 }
 
-class _MarkdownReaderState extends State<MarkdownReader> {
+class _ChangelogPageState extends State<ChangelogPage> {
   String _markdownContent = "";
 
   @override
@@ -37,11 +37,14 @@ class _MarkdownReaderState extends State<MarkdownReader> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('CHANGELOG')),
+      appBar: AppBar(
+        title: const Text('Histórico de versões'),
+        backgroundColor: Colors.blueAccent,
+      ),
       body: Padding(
         padding: const EdgeInsets.all(8),
         child: _markdownContent.isEmpty
-            ? const CircularProgressIndicator()
+            ? const Center(child: CircularProgressIndicator())
             : Markdown(
                 data: _markdownContent,
                 styleSheet: MarkdownStyle.getStyle(context),
