@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'POC Changelog automático',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
@@ -32,14 +33,13 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final Version requiredVersion = Version(1, 0, 0);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blueAccent,
+        leading: const Icon(Icons.history),
         title: const Text('Changelog Automático'),
+        centerTitle: true,
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -54,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 20),
-                ElevatedButton(
+                ElevatedButton.icon(
                   onPressed: () {
                     Navigator.push(
                       context,
@@ -63,13 +63,20 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     );
                   },
-                  child: const Text('Histórico de versões'),
+                  label: const Text(
+                    'Histórico de versões',
+                    style: TextStyle(color: Colors.black),
+                  ),
+                  icon: const Icon(
+                    Icons.history,
+                    color: Colors.black,
+                  ),
                 ),
               ],
             ),
           ),
           VersionWidget(
-            requiredVersion: requiredVersion,
+            requiredVersion: Version(1, 0, 0),
           ),
         ],
       ),
