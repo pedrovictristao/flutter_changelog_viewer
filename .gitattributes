@@ -1,0 +1,10 @@
+# Ignora as pastas de build nativo da contagem de linguagens do GitHub
+android/** linguist-vendored
+ios/** linguist-vendored
+linux/** linguist-vendored
+windows/** linguist-vendored
+macos/** linguist-vendored
+web/** linguist-vendored
+
+# Garante que os arquivos .dart sejam sempre considerados
+*.dart linguist-detectable=true
