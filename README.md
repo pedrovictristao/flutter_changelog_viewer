@@ -97,10 +97,15 @@ Há várias formas de gerar o changelog:
 
 **Exemplo visual do changelog gerado:**
 - Changelog gerado na raiz:
+
 ![Arquivo criado diretamente na raiz do projeto](assets/images/image-1.png)
+
 - Changelog gerado em pasta específica:
+
 ![Arquivo gerado em uma pasta específica](assets/images/image-2.png)
+
 - Changelog estilizado com markdown:
+
 ![Mostrando o arquivo estilizado com markdown](assets/images/image-3.png)
 
 ### Exibindo o Arquivo Markdown no Flutter
@@ -108,3 +113,4 @@ Há várias formas de gerar o changelog:
 Para exibir o conteúdo do arquivo `.md` na tela do usuário, utilize o componente `markdown_reader.dart`. Esse arquivo já foi configurado para ler e renderizar o conteúdo do markdown diretamente no Flutter.
 
 Confira o código do `markdown_reader.dart` para mais detalhes sobre a implementação.
+
